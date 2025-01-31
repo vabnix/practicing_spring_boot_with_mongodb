@@ -1,0 +1,17 @@
+# creating docker-compose.yml file for running postgres locally
+services:
+  postgres-db:
+      image: postgres:latest
+      restart: always
+      environment:
+        POSTGRES_PASSWORD: password
+        POSTGRES_USER: user
+        POSTGRES_DB: db
+      ports:
+        - "5432:5432"
+
+  mongo-db:
+      image: mongo:latest
+      restart: always
+      ports:
+        - "27017:27017"
